@@ -1,3 +1,5 @@
+import random
+
 f = open('scientist.txt', encoding='UTF-8') # открытие основного файла
 file = [] # список для данных из файла
 
@@ -57,12 +59,30 @@ for line in file:
         allopyrinol.append(line)
 
 # Разработчики Аллопуринола:
-print('Разработчиками Аллопуринола были такие люди:')
-schet2 = 0
-whoyearmax = 0
-while schet2 < len(allopyrinol) - 2:
-    for who in range(len(allopyrinol)):
-        if int(str(who[2])[0:4]) > int(str(true_chemicals[who + 1][2])[0:4]):
-            print(f'{who[0]} - {who[1]}')
+# print('Разработчиками Аллопуринола были такие люди:')
+# schet2 = 0
+# whoyearmax = 0
+# while schet2 < len(allopyrinol) - 2:
+#     for who in range(len(allopyrinol)):
+#         if int(str(who[2])[0:4]) > int(str(true_chemicals[who + 1][2])[0:4]):
+#             print(f'{who[0]} - {who[1]}')
 
 # print(ascii('в'))
+
+
+# 1 Пункт - ХЭЩ
+thousand = []
+while len(thousand) != 1024:
+    a = random.choice(1024)
+    if not a in thousand:
+        thousand.append(a)
+
+# 2.    Берем остаток от деления ASCII кода символа на 1024 – получаем индекс
+#
+# 3.    По индексу достаем элемент из таблицы.
+#
+# 4.   Складываем значения всех хешей и берем остаток от деления на 2048
+#
+# 5.   Записываем значение в строку
+#
+#  На вход подается файл scientist.txt результаты необходимо записать в новый scientist _with_hash.csv  файл.
